@@ -4,13 +4,13 @@ from django.forms.widgets import PasswordInput
 from django.contrib.auth.hashers import make_password
 
 
+#models.py
+
 class Interim(models.Model):
 
     phone_number = models.CharField(max_length=20)
     skills = models.CharField(max_length=255)
     availability =  models.CharField(max_length=255)
-
-    # inclure les champs par défaut d'AbstractUser
     username = models.CharField(max_length=150, unique=True)
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
@@ -29,8 +29,6 @@ class Interim(models.Model):
 class Employeur(models.Model):
 
     company_name = models.CharField(max_length=255)
-
-    # inclure les champs par défaut d'AbstractUser
     username = models.CharField(max_length=150, unique=True)
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
