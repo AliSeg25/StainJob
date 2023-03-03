@@ -4,7 +4,7 @@ from django.forms.widgets import PasswordInput
 from django.contrib.auth.hashers import make_password
 
 
-#models.py
+#models.p
 
 class Interim(models.Model):
 
@@ -14,17 +14,22 @@ class Interim(models.Model):
     username = models.CharField(max_length=150, unique=True)
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
-    email = models.EmailField(blank=True)
+    email = models.EmailField(blank=True, unique=True)
     password = models.CharField(max_length=128)
+
+    #Permet de lier les employeur et les imterim
+    Employeur = models.ManyToManyField('Employeur', related_name='Interim')
+
+
 
     # La fonction make_password de Django permet de hacher les mots de passe avant de les stocker en base de données
     def save(self, *args, **kwargs):
         self.password = make_password(self.password)
         super().save(*args, **kwargs)
 
-
     def __str__(self):
         return self.username
+
 
 class Employeur(models.Model):
 
@@ -34,6 +39,10 @@ class Employeur(models.Model):
     last_name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(blank=True)
     password = models.CharField(max_length=128)
+
+    #Permet de lier les employeur et les imterim
+    interim = models.ManyToManyField('Interim', related_name='Employeurs')
+
 
     # La fonction make_password de Django permet de hacher les mots de passe avant de les stocker en base de données
     def save(self, *args, **kwargs):
