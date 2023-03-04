@@ -25,7 +25,7 @@ def InscrptionInterim(request):
         if form.is_valid():
             interim = form.save()
             messages.success(request, 'Inscription réussie')
-            return redirect('hello_world')
+            return redirect('bienvenue')
         else:
             messages.error(request, 'Une erreur est survenue. Veuillez corriger les erreurs ci-dessous.')
     else:
@@ -42,7 +42,7 @@ def InscrptionEmployeur(request):
         if form.is_valid():
             employeur = form.save()
             messages.success(request, 'Inscription réussie')
-            return redirect('hello_world')
+            return redirect('bienvenue')
         else:messages.error(request, 'Une erreur est survenue. Veuillez corriger les erreurs ci-dessous.')
     return render(request, 'plateforme/inscription.html', {'form': form})
 
@@ -55,7 +55,7 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('hello_world')
+                return redirect('bienvenue')
             else:
                 messages.error(request, 'Invalid username or password. Please try again.')
         else:

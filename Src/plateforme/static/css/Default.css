@@ -1,0 +1,183 @@
+
+.Debut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  
+  
+    margin-top: 0;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  
+  
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .Logo
+  {
+    position: fixed;
+    left: 15px;
+  }
+  
+  .reserver
+  {
+    position: fixed;
+    right: 1cm;
+    color: white;
+  }
+  
+  .inscription
+  {
+    position: fixed;
+    right: 6cm;
+    color: white;
+  }
+  
+  .connexion
+  {
+    position: fixed;
+    right: 13cm;
+    color: white;
+  }
+  
+  #slogan
+  {
+    font-size: 50px;
+    color: white;
+    font-family: Georgia, serif;
+    margin-left: 1cm;
+  }
+  
+  #phraseslogan
+  {
+    margin-left: 1cm;
+    font-size: 15px;
+    color: white;
+  }
+  
+  .services
+  {
+    font-size: 20px;
+    color: white;
+    font-family: Georgia, serif;
+  }
+  
+  #titre
+  {
+    margin-left: 1cm;
+    font-size: 30px;
+    color: white;
+  }
+  
+  .GestPay
+  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2cm;
+  margin-top: 2cm;
+  }
+  
+  #ImageAppartement
+  {
+    margin-left: 1cm;
+  }
+  
+  .offreTexteGestpay
+  {
+    font-size: 20px;
+    margin-left: 2cm;
+    margin-right: 1cm;
+  }
+  
+  
+  .WellAnalyse
+  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5cm;
+  margin-top: 7cm;
+  }
+  
+  #ImageBatiment
+  {
+    margin-right: 1cm;
+  }
+  
+  .offreTexteWellAnalyse
+  {
+    font-size: 20px;
+    margin-left: 1cm;
+    margin-right: 2cm;
+  
+  }
+  
+  
+  .Appvest
+  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2cm;
+  margin-top: 2cm;
+  }
+  
+  #Imagebuil
+  {
+    margin-left: 1cm;
+  }
+  
+  .offreTexteAppvest
+  {
+    font-size: 20px;
+    margin-left: 2cm;
+    margin-right: 1cm;
+  }
+  
+  .partenaires
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5cm;
+    margin-top: 5cm;
+  }
+  
+  .offreTextePartenaire
+  {
+    font-size: 20px;
+    margin-left: 1cm;
+    margin-right: 2cm;
+  }
+  {
+    margin-left: 1cm;
+  }
+  
+  #ImagePartenaire
+  {
+    margin-right: 1cm;
+  }
+  
+  
+  
+  .BasdePage
+  {
+    justify-content: center;
+    margin-left: 1cm;
+    margin-right: 1cm;
+  }
+  
+  p
+  {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  
+  
+  
+  body {
+    background-color: #151414;
+  }
