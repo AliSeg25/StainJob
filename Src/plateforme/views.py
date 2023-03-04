@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 
 
+def bienvenue(request):
+    return render(request, 'plateforme/bienvenue.html')
 
 def hello_world(request):
     return HttpResponse("Hello World")
