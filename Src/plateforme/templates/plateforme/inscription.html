@@ -8,13 +8,13 @@
 </head>
 <body>
 
-
 {% block content %}
     <h2>Inscription</h2>
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">S'inscrire</button>
+      {% csrf_token %}
+      {{ user_form.as_p }}
+      {{ employer_form.as_p }}
+      <button type="submit">S'inscrire</button>
     </form>
 {% endblock %}
 

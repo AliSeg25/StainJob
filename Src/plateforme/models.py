@@ -2,20 +2,16 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
-        full_name = models.CharField(max_length=100)
-        groups = models.ManyToManyField(
-        'auth.Group',
-        related_name='customuser_set',
-        blank=True,
-        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
-        verbose_name='groups',
-    )
-        user_permissions = models.ManyToManyField(
-        'auth.Permission',
-        related_name='customuser_set',
-        blank=True,
-        help_text='Specific permissions for this user.',
-        verbose_name='user permissions',
-    )
-        def __str__(self):
-            return self.username
+    full_name = models.CharField(max_length=100)
+    skills = models.CharField(max_length=100, blank=True)
+    experience = models.CharField(max_length=100, blank=True)
+    location = models.CharField(max_length=100, blank=True)
+
+class Worker(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
+    max_distance = models.IntegerField(blank=True, null=True)
+
+class Employeur(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
+    company_name = models.CharField(max_length=100)
+    email = models.EmailField()
