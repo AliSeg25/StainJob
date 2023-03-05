@@ -114,13 +114,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOGIN_URL = 'login'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_DIRS = [BASE_DIR / "static"]
+LOGIN_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -128,3 +130,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = [    'django.contrib.auth.backends.ModelBackend',]
+
+AUTH_USER_MODEL = 'plateforme.CustomUser'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'

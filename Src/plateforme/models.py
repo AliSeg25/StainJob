@@ -1,53 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.forms.widgets import PasswordInput
-from django.contrib.auth.hashers import make_password
 
-
-#models.p
-
-class Interim(models.Model):
-
-    phone_number = models.CharField(max_length=20)
-    skills = models.CharField(max_length=255)
-    availability =  models.CharField(max_length=255)
-    username = models.CharField(max_length=150, unique=True)
-    first_name = models.CharField(max_length=30, blank=True)
-    last_name = models.CharField(max_length=150, blank=True)
-    email = models.EmailField(blank=True, unique=True)
-    password = models.CharField(max_length=128)
-
-    #Permet de lier les employeur et les imterim
-    Employeur = models.ManyToManyField('Employeur', related_name='Interim')
-
-
-
-    # La fonction make_password de Django permet de hacher les mots de passe avant de les stocker en base de données
-    def save(self, *args, **kwargs):
-        self.password = make_password(self.password)
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.username
-
-
-class Employeur(models.Model):
-
-    company_name = models.CharField(max_length=255)
-    username = models.CharField(max_length=150, unique=True)
-    first_name = models.CharField(max_length=30, blank=True)
-    last_name = models.CharField(max_length=150, blank=True)
-    email = models.EmailField(blank=True)
-    password = models.CharField(max_length=128)
-
-    #Permet de lier les employeur et les imterim
-    interim = models.ManyToManyField('Interim', related_name='Employeurs')
-
-
-    # La fonction make_password de Django permet de hacher les mots de passe avant de les stocker en base de données
-    def save(self, *args, **kwargs):
-        self.password = make_password(self.password)
-        super().save(*args, **kwargs)
-
-    def __str__(self):
-        return self.company_name
+class CustomUser(AbstractUser):
+        full_name = models.CharField(max_length=100)
+        groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='customuser_set',
+        blank=True,
+        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
+        verbose_name='groups',
+    )
+        user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='customuser_set',
+        blank=True,
+        help_text='Specific permissions for this user.',
+        verbose_name='user permissions',
+    )
+        def __str__(self):
+            return self.username
