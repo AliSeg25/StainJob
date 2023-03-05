@@ -2,9 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
-from .models import Worker, Employeur
-from .forms import CustomUserCreationForm, WorkerForm, EmployeurForm
+from django.contrib.auth import authenticate
+
 
 
 def bienvenue(request):
@@ -13,54 +12,24 @@ def bienvenue(request):
 def hello_world(request):
     return HttpResponse("Hello World")
 
+from .forms import InterimUserForm
 
 def register_worker(request):
     if request.method == 'POST':
-        user_form = CustomUserCreationForm(request.POST)
-        if user_form.is_valid():
-            user = user_form.save(commit=False)
-            user.save()
-
-            worker_form = WorkerForm(request.POST, instance=Worker(user=user))
-            if worker_form.is_valid():
-                worker_form.save()
-
-            if user_form.cleaned_data.get('user_type') == 'worker':
-                worker_form = WorkerForm(request.POST, instance=Worker(user=user))
-                if worker_form.is_valid():
-                    worker_form.save()
-
+        form = InterimUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Votre compte a été créé, {username}!')
             return redirect('bienvenue')
-
     else:
-        user_form = CustomUserCreationForm()
-        worker_form = WorkerForm()
-
-    return render(request, 'plateforme/inscriptionuser.html', {'user_form': user_form, 'worker_form': worker_form})
+        form = InterimUserForm()
+    return render(request, 'plateforme/inscriptionuser.html', {'form': form})
 
 
-def RegisterEmployeur(request):
-    if request.method == 'POST':
-        user_form = CustomUserCreationForm(request.POST)
-        if user_form.is_valid():
-            user = user_form.save(commit=False)
-            user.save()
-
-            employer_form = EmployeurForm(request.POST, instance=Employeur(user=user))
-            if employer_form.is_valid():
-                employer_form.save()
-
-            return redirect('bienvenue')
-
-    else:
-        user_form = CustomUserCreationForm()
-        employer_form = EmployeurForm()
-
-    return render(request, 'plateforme/inscription.html', {'user_form': user_form, 'employer_form': employer_form})
 
 
-from django.contrib.auth import authenticate, login as auth_login
-
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -74,3 +43,21 @@ def login_view(request):
         else:
             messages.error(request, 'Nom d\'utilisateur ou mot de passe incorrect.')
     return render(request, 'plateforme/login.html')
+
+
+
+
+
+from .forms import CustomUserCreationForm
+
+def create_employeur(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.is_employeur = True
+            user.save()
+            return redirect('bienvenue')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'plateforme/inscription.html', {'form': form})

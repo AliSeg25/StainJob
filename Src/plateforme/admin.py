@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import CustomUser, Employeur, Worker
+from .models import CustomUser, InterimUser, Utilisateur
+#, Employeur, Worker
 
+
+admin.site.register(InterimUser)
 admin.site.register(CustomUser)
-admin.site.register(Employeur)
-admin.site.register(Worker)
+admin.site.register(Utilisateur)

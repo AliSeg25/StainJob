@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'plateforme'
+    'plateforme',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,5 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = [    'django.contrib.auth.backends.ModelBackend',]
 
-AUTH_USER_MODEL = 'plateforme.CustomUser'
+AUTH_USER_MODEL = 'plateforme.Utilisateur'
+#AUTH_USER_MODEL = 'plateforme.CustomUser'
+
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
