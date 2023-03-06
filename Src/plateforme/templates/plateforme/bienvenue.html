@@ -1,3 +1,5 @@
+{% block content %}
+
 {% load static %}
 <html lang="fr">
 
@@ -15,7 +17,7 @@
     <img class="Logo" src="{% static 'img/logo.png' %}" alt="Logo de l'entreprise" width="300" height="200" class="maClasse" id="monId" >
 
     <section class="inscription">
-      <p><a href="/plateforme/inscriptionuser/">Inscrivez-vous dès maintenant</a></p>
+      <p><a href="/plateforme/inscriptionuser_worker/">Inscrivez-vous dès maintenant</a></p>
     </section>
     
     
@@ -65,7 +67,7 @@
           Mais notre plateforme ne s'arrête pas là ! Nous avons conçu un système de réservation facile et efficace qui vous permet de réserver directement le travailleur intérimaire choisi depuis son profil.
           
           <br><br>
-          <a href="/plateforme/incriptionuser/">Inscrivez-vous maintenant</a>
+          <a href="/plateforme/inscription_emp/">Inscrivez-vous maintenant</a>
         </p>
       </div>
       <h2 id="titre2">Nos services pour les entreprises et les travailleurs intérimaires</h2>
@@ -83,7 +85,7 @@
           
           En bref, StainJob est la solution idéale pour trouver des missions d'intérim de manière simple, rapide et efficace. Alors n'attendez plus et inscrivez-vous dès maintenant pour profiter de notre plateforme innovante.
           <br><br><br>
-          <a href="/plateforme/inscriptionuser/">Inscrivez-vous maintenant</a>
+          <a href="/plateforme/inscriptionuser_worker/">Inscrivez-vous maintenant</a>
           </p>
 
         <img id="ImageInterim" src="{% static 'img/interim1.jpeg' %}" alt="image" width="800" height="500">
@@ -100,3 +102,4 @@
     
     </body>
     </html>
+  {% endblock %}

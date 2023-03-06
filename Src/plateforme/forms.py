@@ -14,10 +14,16 @@ class InterimUserForm(UserCreationForm):
         fields = ('username', 'prenom', 'nom', 'email', 'password1', 'password2', 'telephone', 'adresse', 'distance_max')
 
 
-from .models import CustomUser
+from .models import EmpUser
 
-class CustomUserCreationForm(UserCreationForm):
+class EmpUserForm(UserCreationForm):
+    """
+    societe = forms.CharField(max_length=30, required=True)
+    nom = forms.CharField(max_length=30, required=True)
+    adresse = forms.CharField(max_length=200, required=True)
+    telephone = forms.CharField(max_length=20, required=True)
+    """
 
     class Meta:
-        model = CustomUser
-        fields = ['username', 'email', 'password1', 'password2']
+        model = EmpUser
+        fields = ['username', 'email', 'password1', 'password2', 'societe', 'nom', 'adresse', 'telephone']

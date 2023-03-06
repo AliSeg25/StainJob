@@ -14,10 +14,10 @@ class InterimUser(Utilisateur):
     def __str__(self):
         return self.utilisateur.username
 
-class CustomUser(Utilisateur):
+class EmpUser(Utilisateur):
     societe = models.CharField(max_length=30, blank=True)
     nom = models.CharField(max_length=30, blank=True)
     adresse = models.CharField(max_length=200, blank=True)
     telephone = models.CharField(max_length=20, blank=True)
     def __str__(self):
-        return self.utilisateur.username
+        return self.EmpUser.societe
