@@ -7,16 +7,29 @@ from .forms import InterimUserForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import InterimUserForm, InterimUserUpdateForm
+from django.http import Http404
 
 
 def bienvenue(request):
     return render(request, 'plateforme/bienvenue.html')
 
+#Pour rentre dans un Espace client 
 @login_required
 def compte(request):
+    """    
     utilisateur = request.user.interimuser
     return render(request, 'plateforme/compte.html', {'utilisateur': utilisateur})
+    """
+    if hasattr(request.user, 'interimuser'):
+        utilisateur = request.user.interimuser
+        return render(request, 'plateforme/compte.html', {'utilisateur': utilisateur})
 
+    elif hasattr(request.user, 'empuser'):
+        utilisateur = request.user.empuser
+        return render(request, 'plateforme/compte_emp.html', {'utilisateur': utilisateur})
+
+
+#changer les information d'un utilisateur Interim
 @login_required
 def update_account(request):
     user = request.user.interimuser

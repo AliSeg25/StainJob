@@ -14,7 +14,12 @@ class InterimUser(Utilisateur):
     adresse = models.CharField(max_length=200, blank=True)
     telephone = models.CharField(max_length=20, blank=True)
     def __str__(self):
-        return self.utilisateur.username
+        return self.username
+
+
+
+
+
 
 class EmpUser(Utilisateur):
     societe = models.CharField(max_length=30, blank=True)
@@ -23,4 +28,4 @@ class EmpUser(Utilisateur):
     telephone = models.CharField(max_length=20, blank=True)
     domaine = models.CharField(max_length=20, blank=True)
     def __str__(self):
-        return self.EmpUser.societe
+        return self.societe

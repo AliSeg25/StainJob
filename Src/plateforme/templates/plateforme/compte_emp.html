@@ -1,0 +1,12 @@
+
+
+{% block content %}
+  <h1>Mon compte</h1>
+    <p>Nom d'utilisateur: {{ utilisateur.username }}</p>
+    <p>Nom: {{ utilisateur.nom }}</p>
+    <p>Téléphone: {{ utilisateur.telephone }}</p>
+    <p>Adresse: {{ utilisateur.adresse }}</p>
+    <p>Adresse: {{ utilisateur.domaine }}</p>
+    <a href="{% url 'update_account' %}">Modifier mes informations</a>
+    <a href="{% url 'bienvenue' %}">Se déconnecter</a>
+{% endblock %}

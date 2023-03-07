@@ -28,3 +28,10 @@ class InterimUserUpdateForm(forms.ModelForm):
     class Meta:
         model = InterimUser
         fields = ['prenom', 'nom', 'email', 'telephone', 'adresse', 'distance_max']
+
+
+#Pour changer les information d'un Emp
+class EmpUserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = EmpUser
+        fields = ['societe', 'nom', 'email', 'telephone', 'adresse', 'domaine']

@@ -16,11 +16,17 @@
 
     <img class="Logo" src="{% static 'img/logo.png' %}" alt="Logo de l'entreprise" width="300" height="200" class="maClasse" id="monId" >
 
-    <section class="inscription">
-      <p><a href="/plateforme/inscriptionuser_worker/">Inscrivez-vous dès maintenant</a></p>
+    <section class="inscription" id="inscription-dropdown">
+      <div class="dropdown">
+        <p>Inscrivez-vous dès maintenant</p>
+        <div class="dropdown-content">
+          <a href="/plateforme/inscriptionuser_worker/" id="interimaire-option">En tant qu'interimaire</a>
+          <a href="/plateforme/inscription_emp/" id="employeur-option">En tant qu'employeur</a>
+        </div>
+      </div>
     </section>
     
-    
+  
     <section class="connexion">
       <p><a href="/plateforme/login/">Connectez-vous maintenant</a></p>
     </section>
@@ -28,6 +34,7 @@
     <section class="reserver">
       <p>L'interim a porter de clic</p>
     </section>
+  
     
 
   </header>
@@ -94,7 +101,26 @@
     </nav>
     
     <footer>StainJob 2023</footer>
-    
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var interimaireOption = document.getElementById("interimaire-option");
+        var employeurOption = document.getElementById("employeur-option");
+        
+        interimaireOption.style.display = "none";
+        employeurOption.style.display = "none";
+        
+        document.getElementById("inscription-dropdown").addEventListener("mouseover", function() {
+          interimaireOption.style.display = "block";
+          employeurOption.style.display = "block";
+        });
+        
+        document.getElementById("inscription-dropdown").addEventListener("mouseout", function() {
+          interimaireOption.style.display = "none";
+          employeurOption.style.display = "none";
+        });
+      });
+    </script>
     </body>
     </html>
   {% endblock %}
