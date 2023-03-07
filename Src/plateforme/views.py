@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate
 from .forms import InterimUserForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import InterimUserForm, InterimUserUpdateForm
+from .forms import InterimUserForm, InterimUserUpdateForm, EmpUserUpdateForm
 from django.http import Http404
 
 
@@ -32,16 +32,31 @@ def compte(request):
 #changer les information d'un utilisateur Interim
 @login_required
 def update_account(request):
-    user = request.user.interimuser
-    if request.method == 'POST':
-        form = InterimUserUpdateForm(request.POST, instance=user)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Vos informations ont été mises à jour.')
-            return redirect('compte')
-    else:
-        form = InterimUserUpdateForm(instance=user)
-    return render(request, 'plateforme/modifier_compte.html', {'form': form})
+
+    if hasattr(request.user, 'interimuser'):
+        user = request.user.interimuser
+        if request.method == 'POST':
+            form = InterimUserUpdateForm(request.POST, instance=user)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Vos informations ont été mises à jour.')
+                return redirect('compte')
+        else:
+            form = InterimUserUpdateForm(instance=user)
+        return render(request, 'plateforme/modifier_compte.html', {'form': form})
+
+    elif hasattr(request.user, 'empuser'):
+        user = request.user.empuser
+        if request.method == 'POST':
+            form = EmpUserUpdateForm(request.POST, instance=user)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Vos informations ont été mises à jour.')
+                return redirect('compte')
+        else:
+            form = EmpUserUpdateForm(instance=user)
+        return render(request, 'plateforme/modifier_compte.html', {'form': form})
+
 
 #Creation de compte interim
 def register_worker(request):
