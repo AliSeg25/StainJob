@@ -7,7 +7,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
   background-color: #151414;
   color: white;
   position: fixed;
@@ -15,16 +14,31 @@ body{
   left: 0;
   width: 100%;
   z-index: 9999;
+
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+
+  padding-top: 40px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+
 }
 
 .logo img {
+  /**
   width: 100%;
   height: auto;
   max-width: 200px;
+  **/
+  width: 300px;
+  height: auto;
 }
 
 .menu {
   margin: 0;
+  margin-right: 25px;
 }
 
 .menu ul {
@@ -35,7 +49,7 @@ body{
 }
 
 .menu li {
-  margin: 0 15px;
+  margin-right: 35px;
   position: relative;
 }
 
@@ -60,9 +74,9 @@ body{
 }
 
 .dropdown ul li {
-  margin: 0;
   position: relative;
 }
+
 .dropdown ul li a {
   display: block;
   padding: 10px 20px;
@@ -79,14 +93,21 @@ body{
 }
 
 
+.dropdown:hover ul {
+  background-color: white;
+  border-radius: 100px;
+}
 
+.vvv li a {
+  color: rgb(226, 122, 122);
+}
 
 
 
   /** ################## head ########################**/
 
 
-    /** ################## Accueille ####################**/
+    /** ################## Accueille ####################
 .Accueille {
     margin-top: 20%;
     position: sticky;
@@ -107,6 +128,79 @@ body{
   margin-left: 2cm;
   margin-right: 2cm;
 }
+**/
+
+/* Style pour la section Accueil */
+
+/**
+.Accueil {
+  height: 100vh;
+  background-image: url('url-de-votre-image'); 
+  background-size: cover;
+  background-position: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+#Slogan {
+  font-size: 50px;
+  color: black;
+  font-family: 'Nom de votre police', sans-serif;
+  margin: 0;
+}
+
+#Introduction {
+  font-size: 20px;
+  color: black;
+  font-family: 'Nom de votre police', sans-serif;
+  margin: 20px 0;
+}
+*/
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://www.example.com/background-image.jpg");
+  background-size: cover;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+
+.Accueille {
+  max-width: 800px;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+#Slogan {
+  font-size: 50px;
+  color: #fbfafa;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 30px;
+}
+
+#Introduction {
+  font-size: 20px;
+  color: #fffafa;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+
+
    /** ################## Accueille ####################**/
 
 
@@ -186,17 +280,9 @@ a{
   }
   
 p{
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family: 'Proxima Nova', sans-serif;
     color: white;
 }
 
-.vvv:hover{
-  background-color: #f8efef;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 50px;
-}
 
-.inscription a {
-  color: rgb(42, 41, 41);
-}
