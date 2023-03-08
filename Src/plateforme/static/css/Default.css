@@ -2,38 +2,86 @@ body{
   background-color: #151414;
 }
 
-  /** ################## head ##########################################**/
+
 .Menue {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
-    background-color:  #151414;
-    z-index: 9999;
-}
-
-.Logo{
-  position: fixed;
-  left: 25px;
-}
-
-.inscription{
-  position: fixed;
-  right: 6cm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #151414;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
-.connexion{
-  position: fixed;
-  right: 13cm;
-  color: white;
+.logo img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
 }
 
-.reserver{
-  position: fixed;
-  right: 1cm;
-  color: white;
+.menu {
+  margin: 0;
 }
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px 0;
+}
+
+.menu li:hover > ul {
+  display: block;
+}
+
+.dropdown ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #151414;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.dropdown ul li {
+  margin: 0;
+  position: relative;
+}
+.dropdown ul li a {
+  display: block;
+  padding: 10px 20px;
+}
+
+.dropdown ul li:hover > ul {
+  display: block;
+}
+
+.dropdown ul ul {
+  top: 0;
+  left: 100%;
+  display: none;
+}
+
+
+
+
+
 
   /** ################## head ########################**/
 
@@ -140,4 +188,15 @@ a{
 p{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+}
+
+.vvv:hover{
+  background-color: #f8efef;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.inscription a {
+  color: rgb(42, 41, 41);
 }

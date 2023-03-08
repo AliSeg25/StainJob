@@ -14,27 +14,26 @@
 
 <body>
 <!-- ######################################################################################################################################################################################################## -->
-          <!-- Menue -->
+
           <header class="Menue">
-
-                    <img class="Logo" src="{% static 'img/logo.png' %}" alt="Logo de l'entreprise" width="300" height="200" class="maClasse" id="monId" >
-
-                    <section class="inscription" id="inscription-dropdown">
-                        <p>Inscrivez-vous dès maintenant</p>
-                          <a href="/plateforme/inscriptionuser_worker/" id="interimaire-option">En tant qu'interimaire</a>
-                          <a href="/plateforme/inscription_emp/" id="employeur-option">En tant qu'employeur</a>
-                    </section>
-                  
-                
-                    <section class="connexion">
-                      <p><a href="/plateforme/login/">Connectez-vous maintenant</a></p>
-                    </section>
-                  
-                    <section class="reserver">
-                      <p>L'interim a porter de clic</p>
-                    </section>
-            
+            <div class="logo">
+              <img src="{% static 'img/logo.png' %}" alt="Logo de l'entreprise" width="200" height="100">
+            </div>
+            <nav class="menu">
+              <ul>
+                <li><a href="#">Services</a></li>
+                <li id="inscription-dropdown" class="dropdown">
+                  <a href="#">Inscription</a>
+                  <ul>
+                    <li><a href="/plateforme/inscriptionuser_worker/" id="interimaire-option">En tant qu'interimaire</a></li>
+                    <li><a href="/plateforme/inscription_emp/" id="employeur-option">En tant qu'employeur</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Connexion</a></li>
+              </ul>
+            </nav>
           </header>
+          
 <!-- ######################################################################################################################################################################################################## -->
 
           <!-- Aceuille -->
