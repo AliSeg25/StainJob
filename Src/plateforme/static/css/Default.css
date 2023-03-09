@@ -3,7 +3,7 @@ body{
 }
 
 
-
+/** Animation chargement de la page **/
 html, body {
   height: 100%;
   margin: 0;
@@ -33,7 +33,11 @@ body.loaded > *:not(#loader) {
 }
 
 
+/** Animation chargement de la page **/
 
+
+
+/** Menue**/
 
 .Menue {
   display: flex;
@@ -130,7 +134,20 @@ body.loaded > *:not(#loader) {
   color: rgb(226, 122, 122);
 }
 
+/**
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://www.example.com/background-image.jpg");
+  background-size: cover;
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+*/
 
+/** Aceuille */
 section {
   height: 100vh;
   display: flex;
@@ -149,7 +166,6 @@ section {
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-
 }
 
 #Slogan {
@@ -167,68 +183,69 @@ section {
 }
 
 
-   /** ################## Accueille ####################**/
-
-
-  /** ################## Service ####################**/
-#services{
-    font-size: 20px;
-    margin-left: 2cm;
-    margin-right: 1cm;
-}
-  
-#TitreService{
-    margin-left: 1cm;
-    font-size: 50px;
-    color: white;
-}
-
-.ServiceEntreprise{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2cm;
-}
-
-#Imagebureau
-{
-  margin-left: 1cm;
-}
-
-.SpitchEntreprise
-{
-  font-size: 20px;
-  margin-left: 2cm;
-  margin-right: 1cm;
-}
-
-#TitreService2{
-    margin-top: 7cm;
-    margin-left: 1cm;
-    font-size: 50px;
-    color: white;
-}
-
-  
-  
-.ServiceInterim{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2cm;
-}
-
-.SpitchInterim{
-  font-size: 20px;
-  margin-left: 1cm;
-  margin-right: 2cm;
-}
-  
-#ImageInterim{
-    margin-right: 1cm;
-}
-
 /** ################## Service ####################**/
+
+
+#services {
+  background-color: ;
+  padding: 50px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-container {
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  margin-top: 30px;
+  padding-top: 5px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.service-container h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.service-container ul {
+  list-style: none;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+.service-container ul li {
+  margin-bottom: 10px;
+}
+
+.inscription-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff5a5f;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.inscription-link:hover {
+  background-color: #ea1c1c;
+}
 
 
 /** ################## Bas de page ####################**/

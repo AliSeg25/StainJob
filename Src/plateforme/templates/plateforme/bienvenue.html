@@ -10,6 +10,9 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/Default.css' %}">
   <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
   <script src="{% static 'js/bienvenue.js' %}"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap">
 </head>
 
 <body >
@@ -53,58 +56,36 @@
       
 <!-- ######################################################################################################################################################################################################## -->
 
+            <section id="services">
+              <div class="container">
+                <div class="service-container entreprise">
+                  <h2>Nos services pour les entreprises.</h2>
+                  <ul>
+                    <li>Votre avez besoin d'un travailleur intérimaire pour un projet ponctuel ?</li>
+                    <li>La recherche et la réservation d'intérimaires peut être fastidieuse et chronophage, mais StainJob est là pour vous faciliter la vie !</li>
+                    <li>Notre plateforme de gestion de missions en intérim est conçue pour simplifier le processus de recherche et de réservation d'intérimaires.</li>
+                    <li>Nous avons développé un système intuitif et convivial qui vous permet de trouver rapidement et facilement les travailleurs intérimaires dont vous avez besoin.</li>
+                    <li>Grâce à notre plateforme, vous pouvez facilement rechercher un travailleur intérimaire disponible pour une mission spécifique en entrant simplement l'adresse et la date de la mission et les competences.</li>
+                    <li>Notre algorithme de recherche vous fournira alors une liste de travailleurs intérimaires disponibles qui répondent à toute vos critères.</li>
+                    <li>Nous avons conçu un système de réservation facile et efficace qui vous permet de réserver directement le travailleur intérimaire. De plus, si le profil proposé ne correspond pas à vos critères, vous pouvez facilement "switcher" pour que notre système vous propose automatiquement d'autres travailleurs intérimaires disponibles.</li>
+                  </ul>
+                  <a class="inscription-link" href="/plateforme/inscription_emp/">Inscrivez-vous maintenant</a>
+                </div>
 
-          <!-- Les services -->
-    <nav class="Services">
-
-            <h2 id="TitreService">Nos services pour les entreprises.</h2>
-
-            <!-- Les services Entreprise -->
-            <div class="ServiceEntreprise">
-          
-                    <img id="ImageBureau" src="{% static 'img/bureau.jpg' %}" alt="image" width="800" height="500">
-                    <p class="SpitchEntreprise">Votre entreprise a besoin d'un travailleur intérimaire pour un projet ponctuel ? <br> <br><br>
-                      La recherche et la réservation d'intérimaires peut être fastidieuse et chronophage, mais StainJob est là pour vous faciliter la vie !
-
-                      Notre plateforme de gestion de missions en intérim est conçue pour simplifier le processus de recherche et de réservation d'intérimaires compétents et disponibles pour vos missions. 
-                      <br><br>
-                      
-                      Nous avons développé un système intuitif et convivial qui vous permet de trouver rapidement et facilement les travailleurs intérimaires dont vous avez besoin, sans avoir à perdre du temps à chercher sur des sites d'annonces ou à contacter des agences d'intérim et parler avec une tiers personne.
-                      <br><br>
-                      
-                      Grâce à notre plateforme, vous pouvez facilement rechercher un travailleur intérimaire disponible pour une mission spécifique en entrant simplement l'adresse et la date de la mission. 
-                      Notre algorithme de recherche vous fournira alors une liste de travailleurs intérimaires disponibles qui répondent à vos critères de zone géographique et de compétences requises.
-                      
-                      <br><br>
-                      Mais notre plateforme ne s'arrête pas là ! Nous avons conçu un système de réservation facile et efficace qui vous permet de réserver directement le travailleur intérimaire choisi depuis son profil.
-                      
-                      <br><br>
-                      <a href="/plateforme/inscription_emp/">Inscrivez-vous maintenant</a>
-                    </p>
-            </div>
-
-<!----------------------------------- Les services Interimaire ---------------------------------------------------------->
-              <h2 id="TitreService2">Nos services pour les intérimaires</h2>
-
-            <div class="ServiceInterim">
-  
-              <p class="SpitchInterim">
-                      Simplifiez votre recherche de missions d'intérim avec StainJob
-                      <br><br><br>
-                      Chez StainJob, nous proposons une solution facile et efficace pour les travailleurs intérimaires qui cherchent des missions. En créant un profil sur notre plateforme, vous pouvez mettre en avant vos compétences, votre expérience et votre disponibilité, ce qui facilitera la recherche de missions qui correspondent à vos critères.
-                      <br><br>
-                      
-                      Notre système intuitif permet aux employeurs de rechercher des travailleurs intérimaires pour une mission spécifique, en entrant simplement l'adresse et la date de la mission. Si vous avez les compétences requises pour cette mission, vous serez mis en avant pour être réservé directement par l'employeur. Et la meilleure partie ? Vous recevrez une notification pour confirmer la mission.<br><br>
-                      
-                      Avec StainJob, vous pouvez dire adieu aux démarches fastidieuses pour trouver des missions. Tout ce que vous avez à faire, c'est de créer un profil complet et mettre à jour régulièrement vos disponibilités. Notre plateforme s'occupe du reste en vous présentant aux employeurs qui cherchent des compétences comme les vôtres.<br><br>
-                      
-                      En bref, StainJob est la solution idéale pour trouver des missions d'intérim de manière simple, rapide et efficace. Alors n'attendez plus et inscrivez-vous dès maintenant pour profiter de notre plateforme innovante.
-                      <br><br><br>
-                      <a href="/plateforme/inscriptionuser_worker/">Inscrivez-vous maintenant</a>
-                      </p>
-
-                    <img id="ImageInterim" src="{% static 'img/interim1.jpeg' %}" alt="image" width="800" height="500">
-            </div>
+                <div class="service-container interim">
+                  <h2>Nos services pour les intérimaires</h2>
+                  <ul>
+                    <li>Créez un profil complet sur StainJob. En créant votre profil sur notre plateforme, vous êtes en contact direct avec les employeurs, éliminant ainsi les intermédiaires.</li>
+                    <li>Notre système intuitif permet aux employeurs de rechercher des travailleurs intérimaires pour une mission spécifique, en entrant simplement l'adresse et la date de la mission.</li>
+                    <li>Si vous avez les critères requises pour cette mission, vous serez mis en avant pour être réservé directement par l'employeur. Plus d'intermédiaires.</li>
+                    <li>Vous recevrez une notification pour confirmer la mission et aurez un temps pour accepter directement depuis votre profil. On vous a prévenu, nous ferons tout pour vous aider à simplifier votre vie.</li>
+                    <li>Tout ce que vous avez à faire, c'est de mettre à jour régulièrement vos disponibilités. Notre plateforme s'occupe du reste en vous présentant aux employeurs. Vous pouvez dire adieu aux intermédiaires inutiles.</li>
+                    <li>Grâce à StainJob, vous pouvez trouver des missions correspondant à vos préférences de travail, telles que la durée de la mission, le lieu, le type de travail et les horaires.</li>
+                  </ul>
+                  <a class="inscription-link" href="/plateforme/inscriptionuser_worker/">Inscrivez-vous maintenant</a>
+                </div>
+        
+            </section>
 
     </nav>
 <!-- ######################################################################################################################################################################################################## -->
