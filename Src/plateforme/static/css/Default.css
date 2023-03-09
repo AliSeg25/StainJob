@@ -3,11 +3,43 @@ body{
 }
 
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #000000;
+}
+
+
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+body > *:not(#loader) {
+  opacity: 0;
+}
+
+body.loaded > *:not(#loader) {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+
+
+
 .Menue {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #151414;
+  background-color: #000000;
   color: white;
   position: fixed;
   top: 0;
@@ -27,11 +59,7 @@ body{
 }
 
 .logo img {
-  /**
-  width: 100%;
-  height: auto;
-  max-width: 200px;
-  **/
+
   width: 300px;
   height: auto;
 }
@@ -102,68 +130,6 @@ body{
   color: rgb(226, 122, 122);
 }
 
-
-
-  /** ################## head ########################**/
-
-
-    /** ################## Accueille ####################
-.Accueille {
-    margin-top: 20%;
-    position: sticky;
-    height: 100%;
-}
-
-#Slogan{
-    font-size: 50px;
-    color: white;
-    font-family: Georgia, serif;
-    margin-left: 2cm;
-    margin-right: 2cm;
-}
-
-
-#Introduction{
-  font-size: 20px;
-  margin-left: 2cm;
-  margin-right: 2cm;
-}
-**/
-
-/* Style pour la section Accueil */
-
-/**
-.Accueil {
-  height: 100vh;
-  background-image: url('url-de-votre-image'); 
-  background-size: cover;
-  background-position: center; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  max-width: 800px;
-  padding: 50px;
-  background-color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-}
-
-#Slogan {
-  font-size: 50px;
-  color: black;
-  font-family: 'Nom de votre police', sans-serif;
-  margin: 0;
-}
-
-#Introduction {
-  font-size: 20px;
-  color: black;
-  font-family: 'Nom de votre police', sans-serif;
-  margin: 20px 0;
-}
-*/
 
 section {
   height: 100vh;

@@ -21,3 +21,11 @@ document.getElementById("inscription-dropdown").addEventListener("mouseout", fun
 });
 
 /* -------------------------------------------------------------------- */
+window.addEventListener("load", function() {
+  const loader = document.getElementById("loader");
+  
+  setTimeout(function() {
+    loader.style.display = "none";
+    document.body.classList.add("loaded");
+  }, 2000); // 2000ms = 2s de pause
+});
