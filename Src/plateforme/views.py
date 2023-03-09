@@ -6,8 +6,38 @@ from django.contrib.auth import authenticate
 from .forms import InterimUserForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import InterimUserForm, InterimUserUpdateForm, EmpUserUpdateForm
+from .forms import InterimUserForm, InterimUserUpdateForm, EmpUserUpdateForm, DisponibiliteForm
 from django.http import Http404
+from django.shortcuts import render, redirect, get_object_or_404
+
+#fichier views.py
+
+
+
+
+from .models import InterimUser
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import DisponibiliteForm
+@login_required
+def agenda(request):
+    interimuser = get_object_or_404(InterimUser, pk=request.user.pk)
+    if request.method == 'POST':
+        form = DisponibiliteForm(request.POST, instance=interimuser)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Vos disponibilités ont été enregistrées avec succès.')
+            return redirect('compte')
+    else:
+        form = DisponibiliteForm(instance=interimuser)
+    return render(request, 'plateforme/agenda.html', {'form': form})
+
+
+
+
+
 
 
 def bienvenue(request):

@@ -1,3 +1,14 @@
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon titre</title>
+
+  <!-- Liens pour FullCalendar -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+</head>
 {% block content %}
   <h1>Mon compte</h1>
   <p>Nom d'utilisateur: {{ utilisateur.username }}</p>
@@ -9,4 +20,5 @@
   <p>Distance maximale de déplacement: {{ utilisateur.distance_max }}</p>
   <a href="{% url 'update_account' %}">Modifier mes informations</a>
   <a href="{% url 'bienvenue' %}">Se déconnecter</a>
+
 {% endblock %}
